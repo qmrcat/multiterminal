@@ -60,7 +60,7 @@ setuptools==78.1.0
 
 3. **Clonar el repositori**:
    ```bash
-   git clone https://github.com/YOUR_USERNAME/multiterminal.git
+   git clone https://github.com/qmrcat/multiterminal.git
    cd multiterminal
    ```
 
