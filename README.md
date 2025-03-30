@@ -44,6 +44,7 @@ PyQt5_sip==12.17.0
 pywin32-ctypes==0.2.3
 setuptools==78.1.0
 
+
 #### Passos per instal·lar Python i les dependències
 
 1. **Instal·lar Python**:
