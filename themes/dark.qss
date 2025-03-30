@@ -1,0 +1,103 @@
+/* themes/dark.qss */
+
+/* Sobreescriu o afegeix estils al default.qss o base */
+
+QWidget {
+    color: #D4D4D4; /* Text clar per defecte */
+    background-color: #252526; /* Fons fosc general */
+    /* selection-background-color: #264F78; */ /* Color de selecció */
+}
+
+QTabWidget::pane {
+    border-top: 1px solid #3F3F46;
+    background: #1E1E1E; /* Fons de l'àrea de pestanyes (on va el terminal) */
+}
+
+QTabBar::tab {
+    background: #2D2D2D; /* Pestanya inactiva */
+    color: #AAAAAA;
+    border: 1px solid #3F3F46;
+    border-bottom: none;
+    padding: 5px 10px;
+    margin-right: 1px;
+}
+
+QTabBar::tab:selected {
+    background: #1E1E1E; /* Pestanya activa coincideix amb el fons del terminal */
+    color: #FFFFFF;
+    border-bottom: 1px solid #1E1E1E; /* Amaga la vora inferior */
+}
+
+QTabBar::tab:!selected:hover {
+    background: #3E3E40; /* Hover sobre pestanya inactiva */
+}
+
+QStatusBar {
+    /* background: #007ACC; *//* Barra d'estat blava (estil VSCode) */
+    background: #1E1E1E; 
+    color: #FFFFFF;
+}
+
+QMenuBar {
+     background-color: #333333;
+     color: #CCCCCC;
+}
+QMenuBar::item:selected {
+     background-color: #4A4A4A;
+     color: #FFFFFF;
+}
+
+QMenu {
+    background-color: #252526;
+    color: #CCCCCC;
+    border: 1px solid #3F3F46;
+}
+QMenu::item:selected {
+    background-color: #094771; /* Blau fosc per selecció de menú */
+    color: #FFFFFF;
+}
+
+QLineEdit {
+     background-color: #3C3C3C;
+     color: #F0F0F0; ;
+     border: 1px solid #3F3F46;
+     padding: 2px;
+     selection-background-color: #264F78;
+}
+
+/* QTextEdit (terminal output) i CommandLineEdit (input)
+   Normalment reben colors de la paleta via codi Python,
+   però pots definir estils base aquí si vols */
+QTextEdit {
+     background-color: #1E1E1E; /* Fons del terminal */
+     color: #D4D4D4; /* Text del terminal */
+     border: none;
+     selection-background-color: #264F78; /* Selecció dins del terminal */
+}
+
+QPushButton {
+     background-color: #3E3E3E;
+     color: #F0F0F0;
+     border: 1px solid #5A5A5A;
+     padding: 5px 15px;
+     min-width: 60px;
+}
+QPushButton:hover {
+     background-color: #4F4F4F;
+     border-color: #6A6A6A;
+}
+QPushButton:pressed {
+     background-color: #2A2A2A;
+}
+
+/* Altres widgets com QSpinBox, QComboBox, etc. també es poden estilitzar */
+QSpinBox, QComboBox {
+    background-color: #3C3C3C;
+    color: #D4D4D4;
+    border: 1px solid #3F3F46;
+    padding: 2px;
+}
+QSpinBox::up-button, QSpinBox::down-button, QComboBox::down-arrow {
+    /* Estils per a botons interns */
+    /* ... */
+}

@@ -1,0 +1,51 @@
+esunaprova.json
+
+# Fitxers de Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+env/
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# Fitxers de PyInstaller
+build/
+dist/
+*.spec
+
+# Fitxers de l'entorn de desenvolupament
+.env
+.venv
+env/
+venv/
+ENV/
+env.bak/
+venv.bak/
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# Fitxers del sistema operatiu
+.DS_Store
+Thumbs.db
+
+# Fitxers específics de l'aplicació
+*.log
+installer/
+*.layout.json
+layouts/

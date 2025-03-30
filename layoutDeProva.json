@@ -1,0 +1,31 @@
+{
+    "terminals": [
+        {
+            "name": "Terminal (jmira)",
+            "shell": "cmd.exe",
+            "encoding": "cp850",
+            "working_directory": "C:\\",
+            "startup_commands": ["dir"]
+        },
+        {
+            "name": "Terminal Servidor",
+            "shell": "cmd.exe",
+            "encoding": "cp850",
+            "working_directory": "C:\\Users\\user\\Documents\\Projectes\\node-projecte",
+            "startup_commands": [ 
+                "cd C:\\Users\\user\\Documents\\Projectes\\node-projecte",
+                "npm run dev"
+            ]
+        },
+        {
+            "name": "Terminal - Tailwind",
+            "shell": "cmd.exe",
+            "encoding": "cp850",
+            "working_directory": "C:\\Users\\user\\Documents\\Projectes\\node-projecte",
+            "startup_commands": [ 
+                "cd C:\\Users\\user\\Documents\\Projectes\\node-projecte",
+                "npx @tailwindcss/cli -i ./client/input.css -o ./client/css/styles.css --watch"
+            ]
+        }
+    ]
+}
