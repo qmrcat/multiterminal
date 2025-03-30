@@ -19,7 +19,7 @@ MultiTerminal és una aplicació d'escriptori construïda amb Python i PyQt5 que
 
 ### Opció 1: Descarregar l'executable (Windows)
 
-1. Descarrega l'última versió de l'instal·lador des de la [pàgina de Releases](https://github.com/YOUR_USERNAME/multiterminal/releases).
+1. Descarrega l'última versió de l'instal·lador des de la [pàgina de Releases](https://github.com/qmrcat/multiterminal/releases).
 2. Executa l'instal·lador i segueix les instruccions.
 
 ### Opció 2: Executar des del codi font
@@ -60,7 +60,7 @@ setuptools==78.1.0
 
 3. **Clonar el repositori**:
    ```bash
-   git clone https://github.com/YOUR_USERNAME/multiterminal.git
+   git clone https://github.com/qmrcat/multiterminal.git
    cd multiterminal
    ```
 
