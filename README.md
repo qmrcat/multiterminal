@@ -162,4 +162,4 @@ Aquest projecte està llicenciat sota la llicència MIT - vegeu el fitxer [LICEN
 
 - PyQt5 per proporcionar la base de la interfície gràfica
 - Tots els contribuïdors i usuaris que han ajudat a millorar l'aplicació
-- A Gogle AI Studio i sobretot a Claude 3.7 Sonnet i en menor mesura a ChatGPT 4o i a Mistral 
+- A Gogle AI Studio i sobretot a Claude 3.7 Sonnet i en menor mesura a ChatGPT 4o i a Mistral
