@@ -32,18 +32,17 @@ MultiTerminal és una aplicació d'escriptori construïda amb Python i PyQt5 que
 
 #### Les dependències que tinc instal·lades (sols per caràcter informatiu)
 
-altgraph==0.17.4
-ansi2html==1.9.2
-packaging==24.2
-pefile==2023.2.7
-pyinstaller==6.12.0
-pyinstaller-hooks-contrib==2025.2
-PyQt5==5.15.11
-PyQt5-Qt5==5.15.2
-PyQt5_sip==12.17.0
-pywin32-ctypes==0.2.3
-setuptools==78.1.0
-
+- altgraph==0.17.4
+- ansi2html==1.9.2
+- packaging==24.2
+- pefile==2023.2.7
+- pyinstaller==6.12.0
+- pyinstaller-hooks-contrib==2025.2
+- PyQt5==5.15.11
+- PyQt5-Qt5==5.15.2
+- PyQt5_sip==12.17.0
+- pywin32-ctypes==0.2.3
+- setuptools==78.1.0
 
 #### Passos per instal·lar Python i les dependències
 
@@ -154,6 +153,11 @@ Les contribucions són benvingudes! Si vols contribuir al projecte:
 
 - En alguns casos, la interrupció de processos (Ctrl+C) pot no funcionar amb tots els processos.
 - La codificació pot variar depenent de la configuració regional del sistema.
+
+## Com s'ha fet aquesta aplicació
+
+Com s'ha fet aquesta aplicació [Com-he-fet-aquesta-aplicacio.md](Com-he-fet-aquesta-aplicacio.md) per a més detalls.
+
 
 ## Llicència
 
