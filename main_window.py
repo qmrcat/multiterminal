@@ -110,7 +110,7 @@ class MainWindow(QMainWindow):
         self.layouts_dir = get_layouts_dir()
 
         self.setWindowTitle(config.APPLICATION_NAME)
-        # self.setWindowIcon(QIcon("path/to/your/icon.png")) # Descomentar i posar icona
+
 
         self._setup_ui()
         self._create_actions()
@@ -156,11 +156,7 @@ class MainWindow(QMainWindow):
         # self.new_tab_action = QAction(QIcon.fromTheme("document-new", QIcon("")), "&Nou Terminal", self, shortcut="Ctrl+T", triggered=self.add_new_terminal)
         self.new_tab_action = QAction(QIcon.fromTheme("document-new", QIcon("")), "&Nou Terminal", self, shortcut="Ctrl+T", triggered=lambda: self.add_new_terminal())
 
-        # self.load_layout_action = QAction(QIcon.fromTheme("document-open", QIcon("")), "Carre&gar Layout...", self, shortcut="Ctrl+L", triggered=self.prompt_load_layout)
-        # self.save_layout_action = QAction(QIcon.fromTheme("document-save", QIcon("")), "&Guardar Layout", self, shortcut="Ctrl+S", triggered=self.prompt_save_layout)
-        # self.save_layout_as_action = QAction(QIcon.fromTheme("document-save-as", QIcon("")), "Guardar Layout &Com...", self, shortcut="Ctrl+Shift+S", triggered=lambda: self.prompt_save_layout(save_as=True))
-        # self.settings_action = QAction(QIcon.fromTheme("preferences-system", QIcon("")), "&Configuració...", self, triggered=self.open_settings_dialog)
-        # self.exit_action = QAction(QIcon.fromTheme("application-exit", QIcon("")), "&Sortir", self, shortcut="Ctrl+Q", triggered=self.close)
+
         self.load_layout_action = QAction(QIcon.fromTheme("document-open", QIcon("")), "Carre&gar Layout...", self, shortcut="Ctrl+L", triggered=self.prompt_load_layout)
         self.save_layout_action = QAction(QIcon.fromTheme("document-save", QIcon("")), "&Guardar Layout", self, shortcut="Ctrl+S", triggered=self.prompt_save_layout)
         self.save_layout_as_action = QAction(QIcon.fromTheme("document-save-as", QIcon("")), "Guardar Layout &Com...", self, shortcut="Ctrl+Shift+S", triggered=lambda: self.prompt_save_layout(save_as=True))
@@ -193,9 +189,7 @@ class MainWindow(QMainWindow):
 
         # Submenu de layouts
         layouts_menu = file_menu.addMenu("&Layouts")        
-        # file_menu.addAction(self.load_layout_action)
-        # file_menu.addAction(self.save_layout_action)
-        # file_menu.addAction(self.save_layout_as_action)
+
         layouts_menu.addAction(self.load_layout_action)
         layouts_menu.addAction(self.save_layout_action)
         layouts_menu.addAction(self.save_layout_as_action)
@@ -217,7 +211,7 @@ class MainWindow(QMainWindow):
         # QTextEdit ja té menús contextuals.
 
         # --- View Menu (opcional per a temes ràpids) ---
-        # view_menu = menu_bar.addMenu("&Visualitza")
+
 
         # --- View Menu (afegim o modifiquem per incloure el visor de processos) ---
         view_menu = menu_bar.addMenu("&Visualitza")
@@ -233,7 +227,6 @@ class MainWindow(QMainWindow):
         self.tab_widget.currentChanged.connect(self._update_active_terminal)
 
         # Doble clic a la pestanya per canviar el nom
-        # self.tab_widget.tabBar().doubleClicked.connect(self.rename_current_tab)
         self.tab_widget.tabBarDoubleClicked.connect(self.rename_current_tab) # Senyal correcte
 
 
@@ -373,17 +366,7 @@ class MainWindow(QMainWindow):
             # self.close() # Descomenta per tancar l'app quan es tanca l'última pestanya
 
 
-    # def _handle_terminal_finished(self, index: int, exit_code: int, exit_status: QProcess.ExitStatus):
-    #     """Gestiona quan el procés d'un terminal finalitza inesperadament."""
-    #     # Podríem canviar el títol de la pestanya per indicar que està tancat
-    #     current_text = self.tab_widget.tabText(index)
-    #     if not current_text.endswith(" (Tancat)"):
-    #         self.tab_widget.setTabText(index, f"{current_text} (Tancat)")
-    #     # Podríem desactivar l'entrada de comandes
-    #     term_data = self._terminal_widgets.get(index)
-    #     if term_data and term_data.get("input"):
-    #          term_data["input"].setEnabled(False)
-    #          term_data["input"].setPlaceholderText("Terminal tancat")
+
     def _handle_terminal_finished(self, index: int, exit_code: int, exit_status: QProcess.ExitStatus):
         """Gestiona quan el procés d'un terminal finalitza inesperadament."""
         # El codi aquí dins ara hauria de funcionar perquè QProcess està importat
@@ -403,8 +386,6 @@ class MainWindow(QMainWindow):
             term_data = self._terminal_widgets.get(index)
             if term_data and term_data.get("input"):
                  term_data["input"].setFocus() # Focus a l'entrada de la pestanya activa
-                 # Actualitza l'estat (opcional)
-                 # self.statusBar().showMessage(f"Terminal actiu: {self.tab_widget.tabText(index)}")
             else:
                  # Potser la pestanya s'està tancant o hi ha un error
                  self.statusBar().showMessage("A punt")
@@ -414,12 +395,7 @@ class MainWindow(QMainWindow):
 
     def rename_current_tab(self, index=None):
         """Demana un nou nom per a la pestanya actual."""
-        # current_index = self.tab_widget.currentIndex()
-        # if current_index < 0:
-        #     return
 
-        # old_name = self.tab_widget.tabText(current_index)
-        # new_name, ok = QInputDialog.getText(self, "Canviar Nom Pestanya", "Nou nom:", QLineEdit.Normal, old_name)
         current_index = -1
         if index is not None:
              # Si el senyal ens dóna l'índex, l'usem directament
@@ -689,14 +665,11 @@ class MainWindow(QMainWindow):
     def _apply_terminal_settings_to_all(self):
         """Aplica la configuració de font, color, etc., a tots els terminals oberts."""
         font = QFont(
-            # self.settings.value(config.SETTINGS_FONT_FAMILY, config.DEFAULT_FONT_FAMILY),
-            # int(self.settings.value(config.SETTINGS_FONT_SIZE, config.DEFAULT_FONT_SIZE))
             self.settings.value(config.SETTINGS_FONT_FAMILY, config.DEFAULT_FONT_FAMILY()), # Afegit ()
             int(self.settings.value(config.SETTINGS_FONT_SIZE, config.DEFAULT_FONT_SIZE))
         )
         bg_color = QColor(self.settings.value(config.SETTINGS_BG_COLOR, config.DEFAULT_BG_COLOR))
         fg_color = QColor(self.settings.value(config.SETTINGS_FG_COLOR, config.DEFAULT_FG_COLOR))
-        # cursor_color = QColor(self.settings.value(config.SETTINGS_CURSOR_COLOR, config.DEFAULT_CURSOR_COLOR)) # Encara no utilitzat directament
 
         for index in range(self.tab_widget.count()):
              term_data = self._terminal_widgets.get(index)
@@ -714,8 +687,6 @@ class MainWindow(QMainWindow):
         # Obtenir valors de la configuració si no es passen explícitament
         if font is None:
             font = QFont(
-               #  self.settings.value(config.SETTINGS_FONT_FAMILY, config.DEFAULT_FONT_FAMILY),
-               #  int(self.settings.value(config.SETTINGS_FONT_SIZE, config.DEFAULT_FONT_SIZE))
                self.settings.value(config.SETTINGS_FONT_FAMILY, config.DEFAULT_FONT_FAMILY()), # Afegit ()
                int(self.settings.value(config.SETTINGS_FONT_SIZE, config.DEFAULT_FONT_SIZE))
             )
@@ -723,7 +694,6 @@ class MainWindow(QMainWindow):
             bg_color = QColor(self.settings.value(config.SETTINGS_BG_COLOR, config.DEFAULT_BG_COLOR))
         if fg_color is None:
             fg_color = QColor(self.settings.value(config.SETTINGS_FG_COLOR, config.DEFAULT_FG_COLOR))
-        # cursor_color = QColor(self.settings.value(config.SETTINGS_CURSOR_COLOR, config.DEFAULT_CURSOR_COLOR))
         # Aplica al TerminalWidget (QTextEdit intern)
         terminal_widget.apply_styles(font, bg_color, fg_color) # Passa None per cursor_color de moment
         # Aplica al CommandLineEdit
@@ -741,12 +711,6 @@ class MainWindow(QMainWindow):
 
         palette.setColor(QPalette.Text, command_fg)
     
-
-        # # Fons una mica diferent per distingir? O el mateix?
-        # palette.setColor(QPalette.Base, bg_color.lighter(110)) # Una mica més clar
-        # palette.setColor(QPalette.Text, fg_color)
-        # command_input.setPalette(palette)
-
         # ------------------------------------------------------------------
 
         # Opcional: Millorar el contrast de la selecció de text també

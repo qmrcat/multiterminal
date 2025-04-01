@@ -190,15 +190,6 @@ class ProcessViewerDialog(QDialog):
         self.status_label = QLabel("Carregant informació de processos...")
         layout.addWidget(self.status_label)
         
-        # # Taula de processos
-        # self.process_table = QTableWidget()
-        # self.process_table.setColumnCount(5)
-        # self.process_table.setHorizontalHeaderLabels(["PID", "Procés", "Memòria", "CPU", "Detalls"])
-        # self.process_table.horizontalHeader().setSectionResizeMode(4, QHeaderView.Stretch)
-        # self.process_table.setAlternatingRowColors(True)
-        # self.process_table.setSortingEnabled(True)  # Activem ordenació
-        # layout.addWidget(self.process_table)
-        
         # Taula de processos amb millor contrast
         self.process_table = QTableWidget()
         self.process_table.setColumnCount(5)
